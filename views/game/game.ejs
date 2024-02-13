@@ -1,0 +1,34 @@
+<%- include('../templates/header.ejs') %>
+<%- include('../templates/nav.ejs') %>
+    <div class="left">
+        <div class="blur"></div>
+    </div>
+    <div class="content">
+        <h1>Question #</h1>
+            <section class="questions-container">
+                <div class="question">
+                    <h2>Question</h2>
+                    <ul class="answers">
+                        <li><input type="radio" name="answer" value="1"> Answer 1</li>
+                        <li><input type="radio" name="answer" value="2"> Answer 2</li>
+                        <li><input type="radio" name="answer" value="3"> Answer 3</li>
+                        <li><input type="radio" name="answer" value="4"> Answer 4</li>
+                    </ul>
+                    <div class="submit-btn">
+                        <button type="button">Submit</button>
+                    </div>
+                </div>
+            </section>
+        <div class="game-btns">
+            <div class="start-btn">
+                <button>Start</button>
+            </div>
+            <div class="reset-btn">
+                <button>Reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="left">
+        <div class="blur"></div>
+    </div>
+<%- include('../templates/footer.ejs') %>

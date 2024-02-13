@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "left content right";
+    grid-template-columns: 30% 1fr 30%;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(500deg, #3B53D6,#4AFAFA);
+    filter: blur(10px);
+    z-index: -1;
+}
+
+h1,h2,p{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1{
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+h2{
+    padding-bottom: 1rem;
+    padding-top: 3rem;
+}
+
+.question, .categories-container, .difficulty-container{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: .5rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.question > :nth-child(2){
+    align-self: flex-start;
+    margin-left: 10rem;
+}
+
+.submit-btn{
+    margin-top: 1rem;
+}
+
+button{
+    white-space: normal;
+    width: 100px;
+    min-height: 40px;
+    padding: 5px 5px;
+    background-color: rgb(6, 180, 6);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.questions-container{
+    border-radius: 10px;
+    border: solid black 2px;
+    padding-bottom: 2rem;
+    background-color: rgb(252, 252, 252);
+}
+
+.left{
+    grid-area: left;
+}
+
+.content{
+    grid-area: content;
+    justify-content: center;
+    filter: none;
+}
+
+.right{
+    grid-area: right;
+}
+
+.game-btns{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2rem;
+}
+
+.game-btns button{
+    background-color: blue;
+}
+
+li{
+    list-style: none;
+    padding: .5rem;
+}
+
+.difficulties, .categories{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+
+.selected{
+    background-color: rgb(2, 78, 2);
+}

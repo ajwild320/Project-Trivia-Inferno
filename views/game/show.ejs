@@ -1,0 +1,33 @@
+<%- include('../templates/header.ejs') %>
+<script src="/javascript/show.js" defer></script>
+<%- include('../templates/nav.ejs') %>
+    <div class="left">
+        <div class="blur"></div>
+    </div>
+    <div class="content">
+        <h1>Question #</h1>
+        <%if (question != null) { %>
+            <script>let q = '<%- q %>';</script>
+            
+            <section class="questions-container">
+                <div class="question">
+                    <h2><%=question.question%></h2>
+                    <ul class="answers">
+                        <li><input type="radio" name="answer" value="<%=question.answer_choices[0]%>"><%=question.answer_choices[0]%></li>
+                        <li><input type="radio" name="answer" value="<%=question.answer_choices[1]%>"><%=question.answer_choices[1]%></li>
+                        <li><input type="radio" name="answer" value="<%=question.answer_choices[2]%>"><%=question.answer_choices[2]%></li>
+                        <li><input type="radio" name="answer" value="<%=question.answer_choices[3]%>"><%=question.answer_choices[3]%></li>
+                    </ul>
+                    <div class="submit-btn">
+                        <button class="submitbutton" type="button">Submit</button>
+                    </div>
+                </div>
+            </section>
+        <% } else {%>
+            <h2>Error</h2>
+        <% } %>
+    </div>
+    <div class="left">
+        <div class="blur"></div>
+    </div>
+<%- include('../templates/footer.ejs') %>

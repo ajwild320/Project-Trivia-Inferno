@@ -1,0 +1,41 @@
+<%- include('./templates/header.ejs') %>
+<script src="/javascript/index.js" defer></script>
+<%- include('./templates/nav.ejs') %>
+    <div class="left">
+        <div class="blur"></div>
+    </div>
+    <div class="content">
+        <h1>Trivia Night</h1>
+        <section class="categories-container">
+            <h3>Choose a Category</h3>
+            <ul class="categories">
+                <li><button class="category" data-category="9">General Knowledge</button></li>
+                <li><button class="category" data-category="17">Science</button></li>
+                <li><button class="category" data-category="23">History</button></li>
+                <li><button class="category" data-category="22">Geography</button></li>
+                <li><button class="category" data-category="15">Entertainment</button></li>
+                <li><button class="category" data-category="21">Sports</button></li>
+                <li><button class="category" data-category="0">Surprise Me</button></li>
+            </ul>
+        </section>
+        <section class="difficulty-container">
+            <h3>Choose a Difficulty</h3>
+            <ul class="difficulties">
+                <li><button class="difficulty" data-difficulty="easy">Easy</button></li>
+                <li><button class="difficulty" data-difficulty="medium">Medium</button></li>
+                <li><button class="difficulty" data-difficulty="hard">Hard</button></li>
+                <li><button class="difficulty" data-difficulty="hard">Pointless</button></li>
+            </ul>
+        </section>
+
+        <div class="game-btns">
+            <form class="game-start" method="POST" action="/game">
+                <input type="hidden" id="formCategory" name="category" value="">
+                <input type="hidden" id="formDifficulty" name="difficulty" value="">
+                <button class="start-btn">Start</button>
+            </form>
+    </div>
+    <div class="left">
+        <div class="blur"></div>
+    </div>
+<%- include('./templates/footer.ejs') %>
