@@ -1,10 +1,10 @@
-# <H1> Project 2 - Onboarding: Selecting and Prototyping a Programming Language </H1>
+# <H1> Project 3: Onboarding: Selecting and Prototyping Software Components and Frameworks </H1>
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
 **Topic:** Trivia game website
 
-**App Name:** Trivialus / Trivial Inferno / Trivia Inferno (We are currently holding a vote to decide between these names!)
+**App Name:** Trivia Inferno
 
 **Group 11:** Chris Coetzer, Josh Eckard, Zeke Marshall, Will Poole, AJ Wild
 
@@ -14,15 +14,14 @@
 
 <ins>**Task 1:**</ins>\
 Original formatting work has been converted into an Express app in partially implemented MVC Architecture.
+Basic question and answer API has been implemented into the current iteration of the project.
+Basic (initial) question and answer functionality has been implemented alongside the ability to choose an initial set of categories. 
 
 <ins>**Task 2:**</ins>\
-We have a <mark>p2</mark> repository created in the organization for our selecting and prototyping a programming language for the Friday submission.
+We have Created several types of issues and posted them for viewing and editing
 
 <ins>**Task 3:**</ins>\
-Basic question and answer API has been implemented into the current iteration of the project.
-
-<ins>**Task 4:**</ins>\
-Basic (initial) question and answer functionality has been implemented alongside the ability to choose an initial set of categories. 
+We are using express for our backend and will be using MongoDB Atlas for our database hosting
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
