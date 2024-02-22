@@ -23,6 +23,9 @@ We have Created several types of issues and posted them for viewing and editing
 <ins>**Task 3:**</ins>\
 We are using express for our backend and will be using MongoDB Atlas for our database hosting
 
+<ins>**Task 4:**</ins>\
+We are using ejs/HTML and CSS to build custom formatting for our project.
+
 ---------------------------------------------------------------------------------------------------------------------------------
 
 ## Future Tasks/ideas:
@@ -36,6 +39,7 @@ We are using express for our backend and will be using MongoDB Atlas for our dat
   - Quiz results
   - Question of the day responses
   - Streaks
+- Develop a unified sitewide formatting build.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
