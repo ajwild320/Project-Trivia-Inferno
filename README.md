@@ -6,7 +6,7 @@
 
 **App Name:** Trivia Inferno
 
-**Group 11:** Chris Coetzer, Josh Eckard, Zeke Marshall, Will Poole, AJ Wild
+**Group 11:** Christopher Coetzer, Josh Eckard, Zeke Marshall, Will Poole, AJ Wild
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
