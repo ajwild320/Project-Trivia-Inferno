@@ -1,6 +1,6 @@
 # Team 11
 ## Scrum Master
-[Team Member 1]
+Josh Eckard
 ## Product Owner
 - AJ Wild
 ## Developer
