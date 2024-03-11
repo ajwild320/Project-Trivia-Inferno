@@ -10,7 +10,12 @@ exports.process = (data) =>{
         correct_answer: data.correct_answer,
         incorrect_answers: data.incorrect_answers,
     };
-        question.answer_choices = shuffleArray([data.incorrect_answers[0], data.incorrect_answers[1], data.incorrect_answers[2], data.correct_answer]);
+        if(question.incorrect_answers.length === 1){
+            question.answer_choices = shuffleArray([data.incorrect_answers[0], data.correct_answer]);
+        }
+        else{
+            question.answer_choices = shuffleArray([data.incorrect_answers[0], data.incorrect_answers[1], data.incorrect_answers[2], data.correct_answer]);
+        }
     //questions.push(question);
     
     return question;
