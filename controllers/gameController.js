@@ -12,6 +12,7 @@ exports.process = (req, res) => {
         .then(data => {
             let question = data.results[0];
             question = model.process(question);
+            console.log("QUESTION: " + question.answer_choices);
             res.render('./game/show', {question: question, q: JSON.stringify(question)});
         }).catch( err => {
             console.log(err);
@@ -42,7 +43,7 @@ exports.validate = (req, res) => {
 };
 
 function buildURL(cat, diff){
-    const totalQuestions = 1;
+    const totalQuestions = 10;
     const base_url = `https://opentdb.com/api.php?amount=${totalQuestions}`;
     return base_url + "&category=" + cat + "&difficulty=" + diff;
 }

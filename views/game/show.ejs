@@ -13,10 +13,9 @@
                 <div class="question">
                     <h2><%=question.question%></h2>
                     <ul class="answers">
-                        <li><input type="radio" name="answer" value="<%=question.answer_choices[0]%>"><%=question.answer_choices[0]%></li>
-                        <li><input type="radio" name="answer" value="<%=question.answer_choices[1]%>"><%=question.answer_choices[1]%></li>
-                        <li><input type="radio" name="answer" value="<%=question.answer_choices[2]%>"><%=question.answer_choices[2]%></li>
-                        <li><input type="radio" name="answer" value="<%=question.answer_choices[3]%>"><%=question.answer_choices[3]%></li>
+                        <% for(let i = 0; i < question.answer_choices.length; i++) { %>
+                            <li><input type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></li>
+                        <% } %>
                     </ul>
                     <div class="submit-btn">
                         <button class="submitbutton" type="button">Submit</button>
