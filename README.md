@@ -28,9 +28,9 @@ We are using Express for our backend and have set up a MongoDB Atlas account to 
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-## Future Tasks/ideas:
+## Future Tasks/ideas: 
 
-- Find more APIs to use for questions, answers, etc.
+- Find more APIs to use for questions and answers, data manipulation, etc.
 - Integrate a map API for users to compete with other users in their local area.
 - Implement a NoSQL Database (constructed and maintained by us) to store in-app information: (IN PROGRESS)
   - Users
