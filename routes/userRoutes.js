@@ -18,8 +18,8 @@ router.get('/login', isGuest, controller.getUserLogin);
 //POST /users/login: authenticate user's login
 router.post('/login', logInLimiter, isGuest, validateLogIn, validateResult, controller.login);
 
-//GET /users/profile: send user's profile page
-router.get('/profile', isLoggedIn, controller.profile);
+// //GET /users/profile: send user's profile page
+// router.get('/profile', isLoggedIn, controller.profile);
 
 //POST /users/logout: logout a user
 router.get('/logout', isLoggedIn, controller.logout);

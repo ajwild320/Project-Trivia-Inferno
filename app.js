@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
+const flash = require('connect-flash');
 
 //create app
 const app = express();
@@ -37,10 +38,11 @@ app.use(
         secret: "swordOfBaal",
         resave: false,
         saveUninitialized: false,
-        store: new MongoStore({mongoUrl}),
-        cookie: {maxAge: 60*60*1000}
-        })
+        store: MongoStore.create({ mongoUrl: uri }), // Provide the MongoDB URI here
+        cookie: { maxAge: 60*60*1000 }
+    })
 );
+
 
 // setting the flash middleware
 app.use(flash());
