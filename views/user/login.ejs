@@ -1,7 +1,6 @@
+<div class="content">
 <%- include('../templates/header.ejs')%>
-
 <h2 class="loginHeader">Hello! Please Login Here!</h2>
-
 <form action = '/users/login' method = 'POST' class="loginForm">
     <label for="email">Email Address</label></td>
     <input type="email" id="email" name="email" required></td>
@@ -11,5 +10,5 @@
        
     <input type="submit" value="Login">     
 </form>
-
+</div>
 <%- include('../templates/footer.ejs')%>

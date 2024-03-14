@@ -8,3 +8,19 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>Portfolio</title>
 </head>
+<header>
+    <h1>
+        <div id = "logo">
+            <p>TRIVIA INFERNO</p>
+        </div>
+        <%if(!user){%>
+        <a class = "headerlink" href ="/">Home | </a>
+        <a class = "headerlink" href="/users/new">Sign Up | </a>
+        <a class = "headerlink" href="/users/login">Login</a>
+    <%} else {%>
+        <a class = "headerlink" href ="/">Home | </a>
+        <a class = "headerlink" href="/users/profile">Profile | </a>
+        <a class = "headerlink" href="/users/logout">Logout</a>
+        <%}%>
+    </h1>
+</header>

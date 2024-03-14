@@ -48,8 +48,8 @@ exports.login = (req, res, next) => {
   model.findOne({ email: email })
     .then((user) => {
       if (!user) {
-        console.log("wrong email address");
-        req.flash("error", "wrong email address");
+        console.log("Wrong email address");
+        req.flash("error", "Wrong email address");
         res.redirect("/users/login");
       } else {
         user.comparePassword(password).then((result) => {
@@ -58,7 +58,7 @@ exports.login = (req, res, next) => {
             req.flash("success", "You have successfully logged in");
             res.redirect("/users/profile");
           } else {
-            req.flash("error", "wrong password");
+            req.flash("error", "Wrong password");
             res.redirect("/users/login");
           }
         });
@@ -67,35 +67,15 @@ exports.login = (req, res, next) => {
     .catch((err) => next(err));
 };
 
-// exports.profile = async (req, res, next) => {
-//   const userId = req.session.user;
-//   let User = model;
-
-//   try {
-//     // Fetch the user to get their events
-//     const user = await User.findById(userId);
-
-//     if (!user) {
-//       // Handle the case where the user is not found
-//       return res.status(404).send('User not found');
-//     }
-
-//     // Fetch events for the specific user
-//     const events = await Event.find({ author: userId });
-
-//     // Fetch RSVPs for the user
-//     const rsvps = await RSVP.find({ user: userId });
-
-//     res.render('./user/profile', {
-//       user: user,
-//       events: events,
-//       rsvps: rsvps,
-//       categories: categories,
-//     });
-//   } catch (err) {
-//     next(err);
-//   }
-// };
+exports.profile = (req, res, next)=>{
+  let id = req.session.user;
+  Promise.all([model.findById(id)])
+  .then(results=>{
+      const [user] = results;
+      res.render('./user/profile', {user});
+  })
+  .catch(err=>next(err));
+};
 
 
 exports.logout = (req, res, next)=>{

@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000; 
+}
+
 body{
     display: grid;
     grid-template-areas: "left content right";
@@ -79,6 +89,7 @@ button{
 }
 
 .content{
+    margin-top: 200px;
     grid-area: content;
     justify-content: center;
     filter: none;
@@ -111,4 +122,34 @@ li{
 
 .selected{
     background-color: rgb(2, 78, 2);
+}
+
+.headerlink{
+    font-size: medium;
+}
+
+.loginHeader{
+    width: 300px;
+    margin: 0 auto;
+}
+
+.loginForm{
+    width: 300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 110px 200px;
+    row-gap: 0.5rem;
+}
+
+.newUserForm{
+    width: 300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 110px 200px;
+    row-gap: 0.5rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
 }
