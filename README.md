@@ -25,6 +25,15 @@ We are using EJS/HTML and CSS to build custom formatting for our project.
 
 <ins>**Task 4:**</ins>\
 We are using Express for our backend and have set up a MongoDB Atlas account to host our database
+- The atlas DB is successfully linked to our application
+- Users can now create an account and login to it.
+  - The error page for invalid logins is currently bugged, we are working to fix this.
+  - The validation is set up for user inputs within the email and password fields to prevent SQL injection based attacks.
+- As of right now the user can login and logout
+  - login and logout both use "sessions" to ensure proper login and logout capabilities
+  - This requires further testing to ensure perfect functionality.
+- As mentioned above sessions have been integrated within the application to track logged in users and ensure seemless cross
+  site navigation as the project matures.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
