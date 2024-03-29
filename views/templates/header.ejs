@@ -24,3 +24,23 @@
         <%}%>
     </h1>
 </header>
+<body>
+    <div class = "content">
+        <% if(errorMessages.length > 0) { %>
+            <div class="error">
+                <ul>
+                    <% errorMessages.forEach(function(message) { %>
+                        <li><%= message %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% } %>
+        <% if(successMessages.length > 0) { %>
+            <div class="success">
+                <ul>
+                    <% successMessages.forEach(function(message) { %>
+                        <li><%= message %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% } %>

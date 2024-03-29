@@ -153,3 +153,30 @@ li{
     display: flex;
     flex-direction: column;
 }
+
+.success {
+    background: rgba(108, 192, 112, 0.7);
+    color: #fff;
+    width: 70%;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+    padding: 0.5rem 0;
+  
+  }
+  .success ul {
+    list-style-type: none;
+  }
+  
+  .error {
+    background: rgba(255, 102, 51, 0.7);
+    color: #fff;
+    width: 70%;
+    max-height: fit-content;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+  
+  .error ul {
+    list-style-type: none;
+  }
