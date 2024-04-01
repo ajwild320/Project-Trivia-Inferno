@@ -23,6 +23,7 @@
    ---NOTE: this will eventually be updated out as project development continues!
 
 5. Type <code>nodemon app.js</code> this will run the program on your local port 
+5.a If terminal says nodemon not found input <code>npm i nodemon -g --force<code> and retry step 5
 
 6. Go to Google Chrome and enter http://localhost:3000/
 
