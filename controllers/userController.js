@@ -55,6 +55,7 @@ exports.login = (req, res, next) => {
         user.comparePassword(password).then((result) => {
           if (result) {
             req.session.user = user._id;
+            req.session.username = email;
             req.flash("success", "You have successfully logged in");
             res.redirect("/users/profile");
           } else {

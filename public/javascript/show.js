@@ -1,28 +1,17 @@
-const submitbutton = document.querySelector('.submitbutton');
-submitbutton.addEventListener('click', (e) => {
-    const selectedAnswer = document.querySelector('input[type="radio"]:checked');
+const questions = document.querySelectorAll('.choices');
+let selectedAnswer;
+questions.forEach(question => {
+    question.addEventListener('click', () => {
+        console.log("Other: " + question.value);
+        selectedAnswer = question.value;
+        document.querySelector("#selectedAnswer").value = selectedAnswer;
+    });
+});
+
+const playBtn = document.querySelector('.submitbutton');
+playBtn.addEventListener('click', (e) => {
     if(!selectedAnswer){
         alert('Please select an answer');
-        return;
+        e.preventDefault();
     }
-    console.log("QUESTION: " + JSON.parse(q).correct_answer + " SELECTED: " + selectedAnswer.value);
-    fetch('/game/validate', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({selectedAnswer: selectedAnswer.value, question: JSON.parse(q)})
-    }).then(response => response.json()
-        .then(data => {
-            console.log(data);
-            if(data.correct){
-                alert('Correct!');
-            }
-            else{
-                alert('Incorrect');
-            }
-        }).catch( err => {
-            console.log(err);
-            alert('Error: ' + err);
-        }));
 });
