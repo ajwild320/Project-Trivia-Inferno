@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const gameRoutes = require('./routes/gameRoutes');
 const userRoutes = require('./routes/userRoutes');
 const mainRoutes = require('./routes/mainRoutes');
+const leaderboardRoutes = require('./routes/leaderboardRoutes');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
@@ -71,6 +72,8 @@ app.get('/', (req, res) => {
 app.use('/', mainRoutes);
 app.use('/users', userRoutes);
 app.use('/game', gameRoutes);
+app.use('/', leaderboardRoutes);
+
 
 // Error Handling
 app.use((req, res, next) => {

@@ -180,3 +180,14 @@ li{
   .error ul {
     list-style-type: none;
   }
+
+.leaderboard-wrapper {
+    width: 100%; /* Take full width to center content inside */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    flex-direction: column; /* Stack children vertically */
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    text-align: center; /* Adjust as needed */
+}
