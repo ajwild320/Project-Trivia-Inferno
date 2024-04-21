@@ -1,0 +1,31 @@
+<%- include('../templates/header.ejs') %>
+<%- include('../templates/nav.ejs') %>
+
+<body>
+    <h1>Leaderboard</h1>
+    <div class="leaderboard-wrapper">
+        <% if (leaderboard.length) { %>
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% leaderboard.forEach(function(user, index) { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= user.username %></td>
+                            <td><%= user.totalScore %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No leaderboard data available.</p>
+        <% } %>
+    </div>
+<%- include('../templates/footer.ejs') %>
+

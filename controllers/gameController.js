@@ -88,8 +88,13 @@ exports.show = (req, res) => {
             let score = req.session.score;
             let userScore = new UserScore({
                 username: req.session.username,
+                userId: req.session.user,
                 score: score
-                });
+            });
+            userScore.save().catch((err) => {
+                console.error("Error saving UserScore: ", err);
+                res.status(400).send("Unable to save user score" + err);
+            });
             let quiz = new Quiz({
                 questions: questions,
                 userScores: userScore
@@ -102,6 +107,7 @@ exports.show = (req, res) => {
             let score = req.session.score;
             let userScore = new UserScore({
                 username: req.session.username,
+                userId: req.session.user,
                 score: score
                 });
             Quiz.findByIdAndUpdate(req.session.quizID, {$push: {userScores: userScore}}, {new: true})
