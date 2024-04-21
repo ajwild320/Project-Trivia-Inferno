@@ -1,20 +1,22 @@
 <%- include('../templates/header.ejs') %>
 <script src="/javascript/show.js" defer></script>
 <%- include('../templates/nav.ejs') %>
-        <h1>Question #</h1>
         <%if (question != null) { %>
-            <script>let q = '<%- q %>';</script>
-            
+            <h1>Question <%- index+1 %></h1>
+            <h2>Score: <%- score %></h2>            
             <section class="questions-container">
                 <div class="question">
                     <h2><%=question.question%></h2>
                     <ul class="answers">
                         <% for(let i = 0; i < question.answer_choices.length; i++) { %>
-                            <li><input type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></li>
+                            <li><input class="choices" type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></li>
                         <% } %>
                     </ul>
                     <div class="submit-btn">
-                        <button class="submitbutton" type="button">Submit</button>
+                        <form class="submitAnswer" method="POST" action="/game/validate">
+                            <input type="hidden" id="selectedAnswer" name="selectedAnswer" value="">
+                            <button class="submitbutton" type="submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </section>
