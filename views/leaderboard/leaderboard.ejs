@@ -9,7 +9,7 @@
                 <thead>
                     <tr>
                         <th>Rank</th>
-                        <th>Username</th>
+                        <th>Name</th>
                         <th>Score</th>
                     </tr>
                 </thead>
@@ -17,7 +17,7 @@
                     <% leaderboard.forEach(function(user, index) { %>
                         <tr>
                             <td><%= index + 1 %></td>
-                            <td><%= user.username %></td>
+                            <td><%= user.firstName %> <%= user.lastName %></td>
                             <td><%= user.totalScore %></td>
                         </tr>
                     <% }); %>
