@@ -1,0 +1,44 @@
+html{
+    position: relative;
+    min-height: 100vh;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    background-color: #161616;
+    display: flex;
+    padding: 0 1rem;
+    justify-content: space-between;
+}
+
+.headerlink{
+    font-style: italic;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+}
+
+#logo{
+    background: linear-gradient(46deg, #f42b03 0%, #ffbe0b 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+}
+
+#nav{
+    background: linear-gradient(316deg, #f42b03 0%, #ffbe0b 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
