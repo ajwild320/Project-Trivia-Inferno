@@ -4,34 +4,11 @@
     box-sizing: border-box;
 }
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 1000; 
-}
-
 body{
     display: grid;
     grid-template-areas: "left content right";
     grid-template-columns: 30% 1fr 30%;
 }
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(500deg, #3B53D6,#4AFAFA);
-    filter: blur(10px);
-    z-index: -1;
-}
-
 h1,h2,p{
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -122,10 +99,6 @@ li{
 
 .selected{
     background-color: rgb(2, 78, 2);
-}
-
-.headerlink{
-    font-size: medium;
 }
 
 .loginHeader{
