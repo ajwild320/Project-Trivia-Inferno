@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#welcome{
+    background-color: #ec5300;
+    border-radius: 3%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 20vh auto;
+    width: 50%;
+    box-shadow: 0 0 5px 5px gray;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#categories-container, #difficulty-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+li{
+    display: inline-block;
+    width: fit-content;
+}
+
+.difficulty, .category, .start-btn{
+    border-width: 3px;
+    border-style: solid;
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: #ffbe0b;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    box-shadow: 0 0 5px 0 black;
+    width: 200px;
+}
+
+.difficulty{
+    width: 150px;
+}
+
+.start-btn{
+    width: 80%;
+    display: block;
+    margin: 3rem auto 0;
+}
+
+.selected{
+    background-color: #ef473a;
+}
+
+h1, h3, .difficulty, .category{
+    text-align: center;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 2rem 0 1rem;
+}
+

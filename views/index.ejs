@@ -1,10 +1,17 @@
 <%- include('./templates/header.ejs') %>
+    <head>
+        
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/background.css">
+    </head>
 
     <script src="/javascript/index.js" defer></script>
+
+    <div id="welcome">
         <h1>Welcome to Trivia Inferno</h1>
         <section class="categories-container">
             <h3>Choose a Category</h3>
-            <ul class="categories">
+            <ul class="categories" id="categories-container">
                 <li><button class="category" data-category="9">General Knowledge</button></li>
                 <li><button class="category" data-category="17">Science</button></li>
                 <li><button class="category" data-category="23">History</button></li>
@@ -16,7 +23,7 @@
         </section>
         <section class="difficulty-container">
             <h3>Choose a Difficulty</h3>
-            <ul class="difficulties">
+            <ul class="difficulties" id="difficulty-container">
                 <li><button class="difficulty" data-difficulty="easy">Easy</button></li>
                 <li><button class="difficulty" data-difficulty="medium">Medium</button></li>
                 <li><button class="difficulty" data-difficulty="hard">Hard</button></li>
@@ -30,12 +37,7 @@
                 <input type="hidden" id="formDifficulty" name="difficulty" value="">
                 <button class="start-btn">Start</button>
             </form>
-    </div>
-    <div class="left">
-        <div class="blur"></div>
-    </div>
-    <div class="right">
-        <div class="blur"></div>
+        </div>
     </div>
 
 <%- include('./templates/footer.ejs') %>
