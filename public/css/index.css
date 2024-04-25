@@ -1,5 +1,5 @@
 #welcome{
-    background-color: #ec5300;
+    background: linear-gradient(10deg, #f42b03 0%, #ffbe0b 100%);
     border-radius: 3%;
     padding: 1rem 0;
     display: flex;
@@ -47,7 +47,7 @@ li{
 .start-btn{
     width: 80%;
     display: block;
-    margin: 3rem auto 0;
+    margin: 3rem auto 1rem;
 }
 
 .selected{
