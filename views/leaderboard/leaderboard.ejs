@@ -1,31 +1,38 @@
 <%- include('../templates/header.ejs') %>
-<%- include('../templates/nav.ejs') %>
+
+<head>
+    <link rel="stylesheet" href="/css/background.css">
+    <link rel="stylesheet" href="/css/leaderboard.css">
+</head>
 
 <body>
-    <h1>Leaderboard</h1>
-    <div class="leaderboard-wrapper">
-        <% if (leaderboard.length) { %>
-            <table class="leaderboard-table">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Name</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% leaderboard.forEach(function(user, index) { %>
+    <div id="content">
+        <h1>Leaderboard</h1>
+        <div class="leaderboard-wrapper">
+            <% if (leaderboard.length) { %>
+                <table class="leaderboard-table">
+                    <thead>
                         <tr>
-                            <td><%= index + 1 %></td>
-                            <td><%= user.firstName %> <%= user.lastName %></td>
-                            <td><%= user.totalScore %></td>
+                            <th id="rank">Rank</th>
+                            <th id="name">Name</th>
+                            <th id="score">Score</th>
                         </tr>
-                    <% }); %>
-                </tbody>
-            </table>
-        <% } else { %>
-            <p>No leaderboard data available.</p>
-        <% } %>
+                    </thead>
+                    <tbody>
+                        <% leaderboard.forEach(function(user, index) { %>
+                            <tr id="people">
+                                <td id="rank"><%= index + 1 %></td>
+                                <td id="name"><%= user.firstName %> <%= user.lastName %></td>
+                                <td id="score"><%= user.totalScore %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No leaderboard data available.</p>
+            <% } %>
+    </div>
+    
     </div>
 <%- include('../templates/footer.ejs') %>
 
