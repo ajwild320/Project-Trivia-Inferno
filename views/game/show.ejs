@@ -1,33 +1,38 @@
 <%- include('../templates/header.ejs') %>
 <script src="/javascript/show.js" defer></script>
 <%- include('../templates/nav.ejs') %>
-        <%if (question != null) { %>
-            <h1>Question <%- index+1 %></h1>
-            <h2>Score: <%- score %></h2>            
-            <section class="questions-container">
-                <div class="question">
-                    <h2><%=question.question%></h2>
-                    <ul class="answers">
-                        <% for(let i = 0; i < question.answer_choices.length; i++) { %>
-                            <li><input class="choices" type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></li>
-                        <% } %>
-                    </ul>
-                    <div class="submit-btn">
-                        <form class="submitAnswer" method="POST" action="/game/validate">
-                            <input type="hidden" id="selectedAnswer" name="selectedAnswer" value="">
-                            <button class="submitbutton" type="submit">Submit</button>
-                        </form>
+
+
+        <head>
+            <link rel="stylesheet" href="/css/background.css">
+            <link rel="stylesheet" href="/css/show.css">
+        </head>
+
+        <div id="content">
+            <%if (question != null) { %>
+                <div id="wrapper">
+                    <h1>Question <%- index+1 %></h1>
+                    <h1>Score: <%- score %></h1>  
+                </div>   
+                <section class="questions-container">
+                    <div class="question">
+                        <h2><%=question.question%></h2>
+                        <ul class="answers">
+                            <% for(let i = 0; i < question.answer_choices.length; i++) { %>
+                                <li><button class="choices" type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></button></li>
+                            <% } %>
+                        </ul>
+                        <div class="submit-btn">
+                            <form class="submitAnswer" method="POST" action="/game/validate">
+                                <input type="hidden" id="selectedAnswer" name="selectedAnswer" value="">
+                                <button class="submitbutton" type="submit">Submit</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </section>
-        <% } else {%>
-            <h2>Error</h2>
-        <% } %>
-    </div>
-    <div class="left">
-        <div class="blur"></div>
-    </div>
-    <div class="right">
-        <div class="blur"></div>
-    </div>
+                </section>
+            <% } else {%>
+                <h2>Error</h2>
+            <% } %>
+        </div>
+        
 <%- include('../templates/footer.ejs') %>
