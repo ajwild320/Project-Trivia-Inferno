@@ -86,11 +86,20 @@ exports.show = (req, res) => {
     if(index == questions.length){
         if(!req.session.isRepeat){
             let score = req.session.score;
-            let userScore = new UserScore({
-                username: req.session.username,
-                userId: req.session.user,
-                score: score
-            });
+            let userScore;
+            if(req.session.username === undefined){
+                userScore = new UserScore({
+                    username: "Guest",
+                    userId: "Guest",
+                    score: score
+                });
+            } else {
+                userScore = new UserScore({
+                    username: req.session.username,
+                    userId: req.session.user,
+                    score: score
+                });
+            }
             userScore.save().catch((err) => {
                 console.error("Error saving UserScore: ", err);
                 res.status(400).send("Unable to save user score" + err);
