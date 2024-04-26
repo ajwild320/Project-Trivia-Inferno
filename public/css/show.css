@@ -39,7 +39,7 @@ ul{
 
 .selected{
     background-color: #ef473a;
-    transition: all .2s;
+    transition: all .3s;
 }
 
 .submit-btn{
