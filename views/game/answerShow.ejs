@@ -19,7 +19,13 @@
                         <h2><%=question.question%></h2>
                         <ul class="answers">
                             <% for(let i = 0; i < question.answer_choices.length; i++) { %>
-                                <li><button class="choices" type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></button></li>
+                                <% if(question.answer_choices[i] === question.correct_answer){ %>
+                                    <li><button class="choices correct" type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></button></li>
+                                <% } else if(question.answer_choices[i] === selectedAnswer) { %>
+                                    <li><button class="choices incorrect" type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></button></li>
+                                <% } else { %>
+                                    <li><button class="choices" type="radio" name="answer" value="<%=question.answer_choices[i]%>"><%=question.answer_choices[i]%></button></li>
+                                <% } %>
                             <% } %>
                         </ul>
                         <div class="submit-btn">

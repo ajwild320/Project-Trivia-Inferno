@@ -69,3 +69,10 @@ ul{
 h2{
     margin: 1rem 2rem 0;
 }
+
+.correct{
+    background-color: #4CAF50;
+}
+.incorrect{
+    background-color: #f44336;
+}
