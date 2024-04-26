@@ -40,3 +40,16 @@ h2, #share{
     margin-right: 2rem;
     align-self: center;
 }
+
+#container{
+    background: linear-gradient(10deg, #f42b03 0%, #ffbe0b 100%);
+    border-radius: 3%;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-items: center;
+    margin: 20vh auto;
+    width: 50%;
+    box-shadow: 0 0 5px 5px gray;
+    font-family: "Roboto", sans-serif;
+}

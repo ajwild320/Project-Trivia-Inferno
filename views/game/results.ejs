@@ -4,17 +4,22 @@
 <head>
     <link rel="stylesheet" href="/css/background.css">
     <link rel="stylesheet" href="/css/results.css">
+    <script src="/javascript/share.js" defer></script>
 </head>
 
-<div id="content">
-    <div id="stats">
-        <% if(quiz) { %>
-        <h2>Score: <%=score%> </h2>
-        <h2>Correct Answers: <%=correct%></h2>
-        <h2>Incorrect Answers: <%=incorrect%></h2>
-        <% } %>
+<div id="container">
+    <div id="content">
+        <div id="stats">
+            <% if(quiz) { %>
+            <h2>Score: <%=score%> </h2>
+            <h2>Correct Answers: <%=correct%></h2>
+            <h2>Incorrect Answers: <%=incorrect%></h2>
+            <% } %>
+        </div>
+        <p id="urlholder" hidden>http://localhost:3000/game/show/<%-quiz._id%></p>
+        <button id="share">Share your results!</button>
     </div>
-    <a id="share" href="http://localhost:3000/game/show/<%-quiz._id%>">Share your results!</a>
+    <div id="flashmessagediv"></div>
 </div>
 
 <%- include('../templates/footer.ejs') %>

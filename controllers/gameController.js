@@ -119,18 +119,18 @@ exports.show = (req, res) => {
                     userId: req.session.user,
                     score: score
                 });
+                userScore.save().catch((err) => {
+                    console.error("Error saving UserScore: ", err);
+                    res.status(400).send("Unable to save user score" + err);
+                });
+                let quiz = new Quiz({
+                    questions: questions,
+                    userScores: userScore
+                });
+                quiz.save()
+                .then((quiz) => {res.render('./game/results', {score: score, correct: req.session.correct, incorrect: req.session.incorrect, quiz: quiz});})
+                .catch((err) => {res.status(400).send("Unable to save quiz" + err);});
             }
-            userScore.save().catch((err) => {
-                console.error("Error saving UserScore: ", err);
-                res.status(400).send("Unable to save user score" + err);
-            });
-            let quiz = new Quiz({
-                questions: questions,
-                userScores: userScore
-            });
-            quiz.save()
-            .then((quiz) => {res.render('./game/results', {score: score, correct: req.session.correct, incorrect: req.session.incorrect, quiz: quiz});})
-            .catch((err) => {res.status(400).send("Unable to save quiz" + err);});
         }
         else{
             let score = req.session.score;
@@ -183,7 +183,7 @@ exports.results = (req, res) => {
 };
 
 function buildURL(cat, diff){
-    const totalQuestions = 10;
+    const totalQuestions = 1;
     const base_url = `https://opentdb.com/api.php?amount=${totalQuestions}`;
     return base_url + "&category=" + cat + "&difficulty=" + diff;
 }
