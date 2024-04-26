@@ -51,6 +51,7 @@ exports.refine = (req, res) => {
             req.session.score = 0;
             req.session.correct = 0;
             req.session.incorrect = 0;
+            req.session.isAnswerDisplay = false;
 
             res.redirect('/game/show');
         }).catch( err => {
@@ -70,6 +71,7 @@ exports.showID = (req, res) => {
         req.session.score = 0;
         req.session.correct = 0;
         req.session.incorrect = 0;
+        req.session.isAnswerDisplay = false;
         res.redirect('/game/show');
     })
     .catch((err) => {
@@ -83,13 +85,16 @@ exports.show = (req, res) => {
         req.session.score = 0;
         req.session.correct = 0;
         req.session.incorrect = 0;
+        req.session.isAnswerDisplay = false;
+    }
+    if(req.session.isAnswerDisplay){
+        setTimeout(() => {
+            req.session.isAnswerDisplay = false;
+            res.redirect('/game/show');
+        }, 3000);
     }
     let questions = req.session.questions;
     let index = req.session.index;
-    console.log("INDEX: " + index);
-    console.log("Score " + req.session.score);
-    console.log("Correct " + req.session.correct);
-    console.log("Incorrect " + req.session.incorrect);
     if(index == questions.length){
         if(!req.session.isRepeat){
             let score = req.session.score;
@@ -157,33 +162,49 @@ exports.show = (req, res) => {
 };
 
 exports.validate = (req, res) => {
-    let answer = req.body.selectedAnswer;
-    let correct = req.session.questions[req.session.index].correct_answer;
-    console.log("ANSWER: " + answer);
-    console.log("CORRECT: " + correct);
-    if(answer === correct){
-        console.log("Correct running");
-        req.session.index++;
-        req.session.score+=100;
-        req.session.correct++;
+    if(req.session.isAnswerDisplay){
+        req.session.isAnswerDisplay = false;
+        let answer = req.session.currentChoice;
+        let correct = req.session.questions[req.session.index].correct_answer;
+        if(answer === correct){
+            console.log("Correct running");
+            req.session.index++;
+            req.session.score+=100;
+            req.session.correct++;
+        }
+        else{
+            console.log("Incorrect running");
+            req.session.index++;
+            req.session.incorrect++;
+        }
+        req.session.save((err)=>{
+            if(err) console.log(err);
+            res.redirect('/game/show');
+        });
     }
     else{
-        console.log("Incorrect running");
-        req.session.index++;
-        req.session.incorrect++;
+        let answer = req.body.selectedAnswer;
+        let correct = req.session.questions[req.session.index].correct_answer;
+        req.session.isAnswerDisplay = true;
+        req.session.currentChoice = answer;
+        res.render('./game/answerShow', {isAnswerDisplay: req.session.isAnswerDisplay, selectedAnswer: answer, correctAnswer: correct, question: req.session.questions[req.session.index], index: req.session.index, score: req.session.score});
     }
-    req.session.save((err)=>{
-        if(err) console.log(err);
-        res.redirect('/game/show');
-    });
 };
+
+exports.answerShow = (req, res, next) => {
+    setTimeout(() => {
+        req.session.isAnswerDisplay = false;
+        res.redirect('/game/validate', {isAnswerDisplay: req.session.isAnswerDisplay, selectedAnswer: req.body.selectedAnswer, correctAnswer: req.session.questions[req.session.index].correct_answer, question: req.session.questions[req.session.index], index: req.session.index, score: req.session.score});
+    }, 3000);
+};
+    
 
 exports.results = (req, res) => {
     res.render('./game/results');
 };
 
 function buildURL(cat, diff){
-    const totalQuestions = 1;
+    const totalQuestions = 10;
     const base_url = `https://opentdb.com/api.php?amount=${totalQuestions}`;
     return base_url + "&category=" + cat + "&difficulty=" + diff;
 }

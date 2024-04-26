@@ -9,6 +9,9 @@ router.get('/', controller.index);
 router.post('/', controller.refine);
 
 router.get('/show', controller.show);
+
+router.get('/answerShow', controller.answerShow);
+
 router.get('/show/:id', controller.showID);
 
 router.post('/validate', controller.validate);
