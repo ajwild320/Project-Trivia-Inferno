@@ -101,6 +101,17 @@ exports.show = (req, res) => {
                         userId: user._id,
                         score: score
                     });
+                    userScore.save().catch((err) => {
+                        console.error("Error saving UserScore: ", err);
+                        res.status(400).send("Unable to save user score" + err);
+                    });
+                    let quiz = new Quiz({
+                        questions: questions,
+                        userScores: userScore
+                    });
+                    quiz.save()
+                    .then((quiz) => {res.render('./game/results', {score: score, correct: req.session.correct, incorrect: req.session.incorrect, quiz: quiz});})
+                    .catch((err) => {res.status(400).send("Unable to save quiz" + err);});
                 }).catch((err) => {next(err);});
             } else {
                 userScore = new UserScore({
