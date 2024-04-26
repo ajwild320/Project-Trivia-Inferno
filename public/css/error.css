@@ -1,0 +1,15 @@
+#content{
+    background: linear-gradient(10deg, #f42b03 0%, #ffbe0b 100%);
+    border-radius: 3%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 20vh auto;
+    width: 50%;
+    box-shadow: 0 0 5px 5px gray;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+

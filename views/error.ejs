@@ -1,5 +1,14 @@
 <%- include('./templates/header.ejs')%>
-    <h3><%= error.status%> Error</h3> 
-    <p><%= error.message%> </p>
+
+    <head>
+        <link rel="stylesheet" href="/css/background.css">
+        <link rel="stylesheet" href="/css/error.css">
+    </head>
+
+    <div id="content">
+        <h3><%= error.status%> Error</h3> 
+        <h3><%= error.message%> </h3>
+    </div>
+    
 </div>
 <%- include('./templates/footer.ejs')%>
