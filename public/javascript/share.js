@@ -3,9 +3,7 @@ const urlHolder = document.getElementById('urlholder');
 const flashDiv = document.getElementById('flashmessagediv');
 
 shareButton.addEventListener('click', (event) => {
-    console.log(event);
     const url = urlHolder.innerHTML;
-    console.log(url);
     
     navigator.clipboard.writeText(url)
         .then(() => {
@@ -18,6 +16,12 @@ shareButton.addEventListener('click', (event) => {
             }, 3000);
         })
         .catch((error) => {
+            flashMessage.textContent = 'Error copying URL to clipboard!';
+            flashMessage.classList.add('flash-message');
+            flashDiv.appendChild(flashMessage);
+            setTimeout(() => {
+                flashMessage.remove();
+            }, 3000);
             console.error('Failed to copy URL to clipboard:', error);
         });
 });
