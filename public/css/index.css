@@ -45,13 +45,16 @@ li{
 }
 
 .start-btn{
-    width: 80%;
+    width: 40%;
     display: block;
     margin: 3rem auto 1rem;
+    background-color: darkgray;
+    border-radius: 12rem;
 }
 
 .selected{
     background-color: #ef473a;
+    transition: all .2s;
 }
 
 h1, h3, .difficulty, .category{
