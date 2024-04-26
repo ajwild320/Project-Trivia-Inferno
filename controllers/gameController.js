@@ -1,4 +1,5 @@
 const Quiz = require('../models/quiz').model;
+const { nextTick } = require('process');
 const User = require('../models/user');
 const UserScore = require('../models/userScore').model;
 const Question = require('../models/question').model;
@@ -77,6 +78,12 @@ exports.showID = (req, res) => {
 };
 
 exports.show = (req, res) => {
+    if(req.session.index === undefined){
+        req.session.index = 0;
+        req.session.score = 0;
+        req.session.correct = 0;
+        req.session.incorrect = 0;
+    }
     let questions = req.session.questions;
     let index = req.session.index;
     console.log("INDEX: " + index);
@@ -86,11 +93,22 @@ exports.show = (req, res) => {
     if(index == questions.length){
         if(!req.session.isRepeat){
             let score = req.session.score;
-            let userScore = new UserScore({
-                username: req.session.username,
-                userId: req.session.user,
-                score: score
-            });
+            let userScore;
+            if(req.session.username === undefined){
+                User.findOne({firstName: "Guest"}).then((user) => {
+                    userScore = new UserScore({
+                        username: user.firstName + " " + user.lastName,
+                        userId: user._id,
+                        score: score
+                    });
+                }).catch((err) => {next(err);});
+            } else {
+                userScore = new UserScore({
+                    username: req.session.username,
+                    userId: req.session.user,
+                    score: score
+                });
+            }
             userScore.save().catch((err) => {
                 console.error("Error saving UserScore: ", err);
                 res.status(400).send("Unable to save user score" + err);
