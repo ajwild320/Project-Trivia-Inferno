@@ -1,0 +1,42 @@
+#content{
+    background: linear-gradient(10deg, #f42b03 0%, #ffbe0b 100%);
+    border-radius: 3%;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-items: center;
+    margin: 20vh auto;
+    width: 50%;
+    box-shadow: 0 0 5px 5px gray;
+    font-family: "Roboto", sans-serif;
+}
+
+#stats{
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    display: inline;
+}
+
+h2, #share{
+    margin: 1rem 0 0 2rem;
+    font-size: 2rem;
+}
+
+#share{
+    width: max-content;
+    height: max-content;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: #ffbe0b;
+    cursor: pointer;
+    padding: 1rem;
+    box-shadow: 0 0 5px 0 black;
+    color: black;
+    margin-left: auto;
+    margin-right: 2rem;
+    align-self: center;
+}

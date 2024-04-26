@@ -1,10 +1,20 @@
 <%- include('../templates/header.ejs') %>
 <%- include('../templates/nav.ejs') %>
 
-<% if(quiz) { %>}
-    <h2>Score: <%=score%> </h2>
-    <h2>Correct Answers: <%=correct%></h2>
-    <h2>Incorrect Answers: <%=incorrect%></h2>
-    <h1><a href="http://localhost:3000/game/show/<%-quiz._id%>">Share</a></h1>
+<head>
+    <link rel="stylesheet" href="/css/background.css">
+    <link rel="stylesheet" href="/css/results.css">
+</head>
+
+<div id="content">
+    <div id="stats">
+        <% if(quiz) { %>
+        <h2>Score: <%=score%> </h2>
+        <h2>Correct Answers: <%=correct%></h2>
+        <h2>Incorrect Answers: <%=incorrect%></h2>
+        <% } %>
+    </div>
+    <a id="share" href="http://localhost:3000/game/show/<%-quiz._id%>">Share your results!</a>
+</div>
 
 <%- include('../templates/footer.ejs') %>
