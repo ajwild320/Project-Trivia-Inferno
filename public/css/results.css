@@ -2,8 +2,8 @@
     background: linear-gradient(10deg, #f42b03 0%, #ffbe0b 100%);
     border-radius: 3%;
     padding: 2rem 0;
-    padding-bottom: 3rem;
     display: flex;
+    flex-direction: column;
     justify-items: center;
     margin: 20vh auto;
     width: 50%;
@@ -26,7 +26,7 @@ h2, #share{
 }
 
 #share{
-    width: max-content;
+    width: fit-content;
     height: max-content;
     border-width: 3px;
     border-style: solid;
@@ -42,14 +42,13 @@ h2, #share{
 }
 
 #container{
-    background: linear-gradient(10deg, #f42b03 0%, #ffbe0b 100%);
-    border-radius: 3%;
-    padding: 2rem 0;
-    padding-bottom: 3rem;
     display: flex;
-    justify-items: center;
-    margin: 20vh auto;
-    width: 50%;
-    box-shadow: 0 0 5px 5px gray;
-    font-family: "Roboto", sans-serif;
+}
+
+#flashmessagediv p{
+    text-align: center;
+    font-size: 1rem;
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 0;
 }

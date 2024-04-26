@@ -7,7 +7,7 @@ shareButton.addEventListener('click', (event) => {
     
     navigator.clipboard.writeText(url)
         .then(() => {
-            const flashMessage = document.createElement('span');
+            const flashMessage = document.createElement('p');
             flashMessage.textContent = 'URL copied to clipboard!';
             flashMessage.classList.add('flash-message');
             flashDiv.appendChild(flashMessage);
