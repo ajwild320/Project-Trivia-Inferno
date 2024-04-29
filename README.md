@@ -20,7 +20,7 @@
 - EJS/HTML and CSS custom formatting is completed for the current iteration of the project.
 
 <ins>**Task 4:**</ins>
-We are using Express for our backend and have set up a MongoDB Atlas account to host our database.
+- We are using Express for our backend and have set up a MongoDB Atlas account to host our database.
 - The atlas DB is successfully linked to our application.
 - Users can now create an account and login to it.
 - The user can login and logout easily.
