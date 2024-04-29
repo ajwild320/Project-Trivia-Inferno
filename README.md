@@ -14,38 +14,38 @@
 
 <ins>**Task 1:**</ins>\
 - Original formatting work has been converted into an Express app in partially implemented MVC Architecture.
-- Basic question and answer API has been implemented into the current iteration of the project.
-- Basic (initial) question-and-answer functionality has been implemented alongside the ability to choose an initial set of categories. 
+- Question and answer API has been fully implemented into the current iteration of the project.
 
 <ins>**Task 3:**</ins>\
-We are using EJS/HTML and CSS to continue building custom formatting for our project.
+- EJS/HTML and CSS custom formatting is completed for the current iteration of the project.
 
 <ins>**Task 4:**</ins>\
-We are using Express for our backend and have set up a MongoDB Atlas account to host our database
-- The atlas DB is successfully linked to our application
+We are using Express for our backend and have set up a MongoDB Atlas account to host our database.
+- The atlas DB is successfully linked to our application.
 - Users can now create an account and login to it.
-  - The error page for invalid logins is currently bugged, we are working to fix this.
-  - The validation is set up for user inputs within the email and password fields to prevent SQL injection based attacks.
-- As of right now the user can login and logout
-  - login and logout both use "sessions" to ensure proper login and logout capabilities
-  - This requires further testing to ensure perfect functionality.
+- The user can login and logout easily.
+  - login and logout both use "sessions" to ensure proper login and logout capabilities.
 - As mentioned above sessions have been integrated within the application to track logged in users and ensure seemless cross
   site navigation as the project matures.
+
+  <ins>**Task 5:**</ins>\
+  - Quizzes are now fully functional for all users (guests and logged in users).
+  - Leaderboard is Now Implemented.
+  - Quiz sharing feature is now fully integrated.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
 ## Future Tasks/ideas: 
 
-- Find more APIs to use for questions and answers, data manipulation, etc.
 - Integrate a map API for users to compete with other users in their local area.
-- Implement a NoSQL Database (constructed and maintained by us) to store in-app information: (IN PROGRESS)
-  - Users (implemented)
-  - Sessions (implemented)
+- Implement a NoSQL Database (constructed and maintained by us) to store in-app information: (implemented)
+  - Users: (implemented)
+  - Sessions: (implemented)
   - Specific user info
-  - Quiz results
+  - Quiz results: (implemented)
   - Question of the day responses
   - Streaks
-- Develop a unified sitewide formatting build.(IN PROGRESS)
+- Develop a unified sitewide formatting build: (implemented)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -59,3 +59,8 @@ Josh Eckard
 - Josh Eckard
 - Zeke Marshall
 - Will Poole
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+# Video Presentation of Final Submission
+
