@@ -28,10 +28,10 @@ We are using Express for our backend and have set up a MongoDB Atlas account to 
 - As mentioned above sessions have been integrated within the application to track logged in users and ensure seemless cross
   site navigation as the project matures.
 
-  <ins>**Task 5:**</ins>\
-  - Quizzes are now fully functional for all users (guests and logged in users).
-  - Leaderboard is Now Implemented.
-  - Quiz sharing feature is now fully integrated.
+<ins>**Task 5:**</ins>\
+- Quizzes are now fully functional for all users (guests and logged in users).
+- Leaderboard is Now Implemented.
+- Quiz sharing feature is now fully integrated.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
