@@ -1,4 +1,4 @@
-# <H1> Project 6: Sprint 2: Application Database </H1>
+# <H1> Final Project Iteration </H1>
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -12,14 +12,14 @@
 
 <H2> Tasks Completed: </H2>
 
-<ins>**Task 1:**</ins>\
+<ins>**Task 1:**</ins>
 - Original formatting work has been converted into an Express app in partially implemented MVC Architecture.
 - Question and answer API has been fully implemented into the current iteration of the project.
 
-<ins>**Task 3:**</ins>\
+<ins>**Task 3:**</ins>
 - EJS/HTML and CSS custom formatting is completed for the current iteration of the project.
 
-<ins>**Task 4:**</ins>\
+<ins>**Task 4:**</ins>
 We are using Express for our backend and have set up a MongoDB Atlas account to host our database.
 - The atlas DB is successfully linked to our application.
 - Users can now create an account and login to it.
@@ -28,7 +28,7 @@ We are using Express for our backend and have set up a MongoDB Atlas account to 
 - As mentioned above sessions have been integrated within the application to track logged in users and ensure seemless cross
   site navigation as the project matures.
 
-<ins>**Task 5:**</ins>\
+<ins>**Task 5:**</ins>
 - Quizzes are now fully functional for all users (guests and logged in users).
 - Leaderboard is Now Implemented.
 - Quiz sharing feature is now fully integrated.
